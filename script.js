@@ -43,6 +43,7 @@ var todoList = {
 
 const displayTodosButton = document.getElementById('btn_display');
 const toggleAllButton    = document.getElementById('btn_toggleAll');
+const addButton          = document.getElementById('btn_add');
 
 displayTodosButton.addEventListener('click', function(){
   todoList.displayAll();
@@ -50,4 +51,10 @@ displayTodosButton.addEventListener('click', function(){
 
 toggleAllButton.addEventListener('click', function(){
   todoList.toggleAll();
+});
+
+addButton.addEventListener('click', function(){
+  let addTodoInput = document.getElementById('txt_addTodoInput');
+  todoList.addTodo(addTodoInput.value);
+  addTodoInput.value = '';
 });

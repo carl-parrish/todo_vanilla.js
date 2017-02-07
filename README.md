@@ -1,9 +1,3 @@
-#Vanilla JavaScript version of TodoMVC
-
-This is a walk thru project for the ["Practical JavaScript"](https://watchandcode.com/) course. Made to make it even more
-a "real" project and to capture the steps needed. 
-
-
 #V3 requirements
 
 - It should store Todos in an object
@@ -34,3 +28,9 @@ a "real" project and to capture the steps needed.
 - There should be a "Display todos" and a "Toggle All" Button in the app
 - Clicking "Display todos" should run the todoList.displayAll() method
 - Clicking "Toggle All" should run the todoList.toggleAll() method
+
+#V8 requirements
+- It should have working controls for .addTodo
+- It should have working controls for .changeTodo
+- It should have working controls for .deleteTodo
+- It should have working controls for .toggleCompleted
