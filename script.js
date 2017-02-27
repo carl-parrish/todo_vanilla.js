@@ -26,7 +26,7 @@ var todoList = {
     this.todos.splice(index, 1);
     this.displayAll();
   },
-  toggleCompleted: function(index) {
+  toggleCompleted: function(index) {o
     let current = this.todos[index];
     current.completed = !(current.completed);
     this.displayAll();
@@ -46,6 +46,7 @@ const displayTodosButton = document.getElementById('btn_display');
 const toggleAllButton    = document.getElementById('btn_toggleAll');
 const addButton          = document.getElementById('btn_add');
 const editButton         = document.getElementById('btn_edit');
+const deleteButton       = document.getElementById('btn_delete');
 
 
 // Event Listeners
@@ -70,3 +71,9 @@ editButton.addEventListener('click', function(){
     position.value = '';
     content.value  = '';
 });
+
+deleteButton.addEventListener('click', function(){
+    let position = document.getElementById('num_deletePosition');
+    todoList.deleteTodo(position.valueAsNumber);
+    position.value = '';
+})
