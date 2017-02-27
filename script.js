@@ -1,3 +1,5 @@
+"use strict";
+
 var todoList = {
  todos: [],
  displayAll: function() {
@@ -26,7 +28,7 @@ var todoList = {
     this.todos.splice(index, 1);
     this.displayAll();
   },
-  toggleCompleted: function(index) {o
+  toggleCompleted: function(index) {
     let current = this.todos[index];
     current.completed = !(current.completed);
     this.displayAll();
@@ -47,7 +49,7 @@ const toggleAllButton    = document.getElementById('btn_toggleAll');
 const addButton          = document.getElementById('btn_add');
 const editButton         = document.getElementById('btn_edit');
 const deleteButton       = document.getElementById('btn_delete');
-
+const toggleButton       = document.getElementById('btn_toggle');
 
 // Event Listeners
 displayTodosButton.addEventListener('click', function(){
@@ -75,5 +77,11 @@ editButton.addEventListener('click', function(){
 deleteButton.addEventListener('click', function(){
     let position = document.getElementById('num_deletePosition');
     todoList.deleteTodo(position.valueAsNumber);
+    position.value = '';
+});
+
+toggleButton.addEventListener('click', function(){
+    let position = document.getElementById('num_togglePosition');
+    todoList.toggleCompleted(position.valueAsNumber);
     position.value = '';
 })
