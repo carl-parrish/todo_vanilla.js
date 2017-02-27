@@ -41,10 +41,14 @@ var todoList = {
   }
 };
 
+// Setup Buttons
 const displayTodosButton = document.getElementById('btn_display');
 const toggleAllButton    = document.getElementById('btn_toggleAll');
 const addButton          = document.getElementById('btn_add');
+const editButton         = document.getElementById('btn_edit');
 
+
+// Event Listeners
 displayTodosButton.addEventListener('click', function(){
   todoList.displayAll();
 });
@@ -57,4 +61,12 @@ addButton.addEventListener('click', function(){
   let addTodoInput = document.getElementById('txt_addTodoInput');
   todoList.addTodo(addTodoInput.value);
   addTodoInput.value = '';
+});
+
+editButton.addEventListener('click', function(){
+    let position  = document.getElementById('num_EditPosition');
+    let content   = document.getElementById('txt_TodoEdit');
+    todoList.changeTodo(position.valueAsNumber, content.value);
+    position.value = '';
+    content.value  = '';
 });
