@@ -48,7 +48,6 @@ var todoList = {
 };
 
 // Setup Buttons
-const displayTodosButton = document.getElementById('btn_display');
 const toggleAllButton    = document.getElementById('btn_toggleAll');
 const addButton          = document.getElementById('btn_add');
 const editButton         = document.getElementById('btn_edit');
@@ -56,10 +55,6 @@ const deleteButton       = document.getElementById('btn_delete');
 const toggleButton       = document.getElementById('btn_toggle');
 
 // Event Listeners
-displayTodosButton.addEventListener('click', function(){
-  todoList.displayAll();
-});
-
 toggleAllButton.addEventListener('click', function(){
   todoList.toggleAll();
 });
