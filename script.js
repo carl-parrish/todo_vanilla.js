@@ -1,13 +1,17 @@
 "use strict";
 
+const todosUl = document.querySelector('ul');
+
 var todoList = {
  todos: [],
  displayAll: function() {
-   console.log('My Todos:');
+     todosUl.innerHTML = '';
    if (this.todos.length){
      this.todos.map(function(todo){
        let flag = todo.completed ? "(X) ": '( ) ';
-       console.log(flag + todo.todoText);
+       let todoLi = document.createElement('li');
+       todoLi.textContent = flag + todo.todoText;
+       todosUl.appendChild(todoLi);
      });
    }else{
      console.log('Your todolist is empty!');
@@ -84,4 +88,7 @@ toggleButton.addEventListener('click', function(){
     let position = document.getElementById('num_togglePosition');
     todoList.toggleCompleted(position.valueAsNumber);
     position.value = '';
-})
+});
+
+
+
