@@ -1,12 +1,17 @@
 "use strict";
 
+
+const viewSection = document.getElementById('viewSection');
 const todosUl = document.querySelector('ul');
+//const todosUl = document.createElement('ul');
+
 
 var todoList = {
  todos: [],
  displayAll: function() {
      todosUl.innerHTML = '';
    if (this.todos.length){
+       document.querySelector('h3').innerHTML = '';
      this.todos.map(function(todo){
        let flag = todo.completed ? "(X) ": '( ) ';
        let todoLi = document.createElement('li');
@@ -14,7 +19,7 @@ var todoList = {
        todosUl.appendChild(todoLi);
      });
    }else{
-     console.log('Your todolist is empty!');
+     viewSection.insertAdjacentHTML('afterbegin', '<h3>Your todolist is empty!</h3>');
    }
   },
   addTodo: function(textValue) {
@@ -85,5 +90,4 @@ toggleButton.addEventListener('click', function(){
     position.value = '';
 });
 
-
-
+window.onload = todoList.displayAll();
