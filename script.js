@@ -3,7 +3,6 @@
 
 const viewSection = document.getElementById('viewSection');
 const todosUl = document.querySelector('ul');
-//const todosUl = document.createElement('ul');
 
 
 var todoList = {
