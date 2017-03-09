@@ -48,6 +48,10 @@ var todoList = {
     this.displayAll();
   },
   toggleAll(){
+      /*
+     Case 1: If everything's true, make everything false.
+     Case 2: Otherwise make everything true.
+       */
     let todosArray = this.todos;
     let completedTodos = todosArray.filter(current=> current.completed === true);
     let bool = completedTodos.length !== todosArray.length;
