@@ -97,6 +97,6 @@ todosUl.addEventListener('click', (event) =>{
     if (myTarget.className === 'deleteButton'){
         todoList.deleteTodo(position);
     }
-})
+});
 
 window.onload = todoList.displayAll();
